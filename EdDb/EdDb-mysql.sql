@@ -134,26 +134,17 @@ INSERT Instructor (firstname, lastname, yearsexperience, istenured) VALUES ('Amy
 INSERT Instructor (firstname, lastname, yearsexperience, istenured) VALUES ('Larry','Seger',11,1);
 INSERT Instructor (firstname, lastname, yearsexperience, istenured) VALUES ('Kathy','Miller',21,1);
 
-set @downey = null;
-SELECT @downey = Id From Instructor where Lastname = 'Downey';
-set @jones = null;
-SELECT @jones = Id From Instructor where Lastname = 'Jones';
-set @tensi = null;
-SELECT @tensi = Id From Instructor where Lastname = 'Tensi';
-set @nagy = null;
-SELECT @nagy = Id From Instructor where Lastname = 'Nagy';
-set @schell = null;
-SELECT @schell = Id From Instructor where Lastname = 'Schell';
-set @bellman = null;
-SELECT @bellman = Id From Instructor where Lastname = 'Bellman';
-set @hunt = null;
-SELECT @hunt = Id From Instructor where Lastname = 'Hunt';
-set @brock = null;
-SELECT @brock = Id From Instructor where Lastname = 'Brock';
-set @seger = null;
-SELECT @seger = Id From Instructor where Lastname = 'Seger';
-set @miller = null;
-SELECT @miller = Id From Instructor where Lastname = 'Miller';
+-- set @downey = null;
+set @downey = (select Id From Instructor where Lastname = 'Downey');
+set @jones = (select Id From Instructor where Lastname = 'Jones');
+set @tensi = (select Id From Instructor where Lastname = 'Tensi');
+set @nagy = (select Id From Instructor where Lastname = 'Nagy');
+set @schell = (select Id From Instructor where Lastname = 'Schell');
+set @bellman = (select Id From Instructor where Lastname = 'Bellman');
+set @hunt = (select Id From Instructor where Lastname = 'Hunt');
+set @brock = (select Id From Instructor where Lastname = 'Brock');
+set @seger = (select Id From Instructor where Lastname = 'Seger');
+set @miller = (select Id From Instructor where Lastname = 'Miller');
 
 create table Class (
 	Id int primary key auto_increment,
