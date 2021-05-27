@@ -57,9 +57,16 @@ Foreign Key (MenuItemID) references MenuItem(ID),
 CONSTRAINT uMenuItem unique (OrderID, MenuItemID)
 );
 
--- Add some food / menu items
+-- Add Category
+INSERT INTO Category (Name) VALUES
+('Appetizers'),
+('Salads'),
+('Entree'),
+('Sides'),
+('Drinks'),
+('Desserts');
 
 -- create a user and grant privileges to that user
-DROP USER IF EXISTS bmdb_user@localhost;
-CREATE USER bmdb_user@localhost IDENTIFIED BY 'sesame';
-GRANT SELECT, INSERT, DELETE, UPDATE ON bmdb.* TO bmdb_user@localhost;
+DROP USER IF EXISTS fooddb_user@localhost;
+CREATE USER fooddb_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON food_db.* TO fooddb_user@localhost;
