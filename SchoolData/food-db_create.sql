@@ -7,20 +7,18 @@ USE food_db;
 -- DROP TABLE IF EXISTS Category;
 Create table Category (
 ID 			integer 		primary key auto_increment,
-Name 		varchar(255) 	not null unique,
-CONSTRAINT uName unique (Name)
+Name 		varchar(255) 	not null unique
 );
 
 -- create Actor Customer
 -- DROP TABLE IF EXISTS Customer;
 Create table Customer (
 ID 					integer 		primary key auto_increment,
-CustomerNumber		varchar(5)		not null,
+CustomerNumber		varchar(5)		not null unique,
 LastName 			varchar(255) 	not null,
 FirstName 			varchar(255) 	not null,
-Email 				varchar(255) 	not null,
-Phone 				varchar(20),
-CONSTRAINT uCustomer unique (CustomerNumber)
+Email 				varchar(75) 	not null,
+Phone 				varchar(20)		not null
 );
 
 -- create MenuItem table
@@ -29,7 +27,7 @@ Create table MenuItem (
 ID 				integer 			primary key auto_increment,
 CategoryID		integer 			not null,
 Name 			varchar(255) 		not null,
-Price		 	decimal				not null,
+Price		 	decimal(10,2)		not null,
 Calories	 	integer				not null,
 Foreign Key (CategoryID) references Category(ID),
 CONSTRAINT uMenuItem unique (CategoryId, Name)
@@ -42,7 +40,7 @@ ID 				integer 			primary key auto_increment,
 CustomerID		integer 			not null,
 OrderDate 		timestamp 			not null,
 Status		 	varchar(1)			not null,
-Total	 		decimal				not null,
+Total	 		decimal(10,2)		not null,
 Foreign Key (CustomerID) references Customer(ID),
 CONSTRAINT uMenuItem unique (CustomerID, OrderDate)
 );
