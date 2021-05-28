@@ -38,9 +38,9 @@ CONSTRAINT uMenuItem unique (CategoryId, Name)
 Create table OrderTicket (
 ID 				integer 			primary key auto_increment,
 CustomerID		integer 			not null,
-OrderDate 		timestamp 			not null,
-Status		 	varchar(1)			not null,
-Total	 		decimal(10,2)		not null,
+OrderDate 		timestamp 			not null default current_timestamp,
+Status		 	varchar(1)			not null default 'O',
+Total	 		decimal(10,2)		not null default 0,
 Foreign Key (CustomerID) references Customer(ID),
 CONSTRAINT uMenuItem unique (CustomerID, OrderDate)
 );
