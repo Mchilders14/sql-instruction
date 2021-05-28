@@ -130,7 +130,8 @@ INSERT INTO OrderTicket (id, customerid)VALUES
 (2, 2),
 (3, 3),
 (4, 4),
-(5, 5);
+(5, 5),
+(6, 6);
 
 -- Matt's Order
 INSERT INTO LineItem (orderid, menuitemid, qty)VALUES
@@ -164,6 +165,12 @@ INSERT INTO LineItem (orderid, menuitemid, qty)VALUES
 (5, 2, 1),
 (5, 24, 1),
 (5, 11, 1);
+
+-- Matts's Order
+INSERT INTO LineItem (orderid, menuitemid, qty)VALUES
+(6, 7, 1),
+(6, 33, 1),
+(6, 40, 1);
 
 -- create a user and grant privileges to that user
 DROP USER IF EXISTS bmdb_user@localhost;
