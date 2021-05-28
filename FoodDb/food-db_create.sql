@@ -59,7 +59,7 @@ Foreign Key (MenuItemID) references MenuItem(ID),
 CONSTRAINT uMenuItem unique (OrderID, MenuItemID)
 );
 
--- Add some food / menu items-- Adding some test data to the Food DB
+-- Add some food categories
 INSERT INTO Category VALUES
 (1, 'Appetizers'),
 (2, 'Salads'),
@@ -68,7 +68,7 @@ INSERT INTO Category VALUES
 (5, 'Drinks'),
 (6, 'Dessert');
 
-
+-- Adding some delicious choices to the menu
 INSERT INTO MenuItem VALUES
 (1, 1, 'Cheese Stick', 8.99, 800),
 (2, 1, 'Fried Pickles', 5.99, 600),
@@ -111,6 +111,7 @@ INSERT INTO MenuItem VALUES
 (39, 3, 'MeatTornado', 4.99, 1890),
 (40, 6, 'Single Donuts', 0.99, 550);
 
+-- Inserting customers into the database
 INSERT INTO Customer (id, customernumber, lastname, firstname, email, phone) VALUES
 (1, 'MC001', 'Childers', 'Matthew', 'childersmatt4@gmail.com', '513-703-0376'),
 (2, 'KW002', 'Kanye', 'West', 'Yeezus@ye.com', '441-378-2345'),
@@ -123,7 +124,7 @@ INSERT INTO Customer (id, customernumber, lastname, firstname, email, phone) VAL
 (9, 'ZW004', 'Zach', 'Wright', 'wrightzz@icloud.com', '502-833-2298'),
 (10, 'XD005', 'Xaviar', 'Davis', 'XavDav@gmail.com', '513-090-4467');
 
-
+-- Creating some sample order tickets
 INSERT INTO OrderTicket (id, customerid)VALUES
 (1, 1),
 (2, 2),
