@@ -100,9 +100,9 @@ INSERT INTO MenuItem VALUES
 (28, 5, 'Bud Light 32oz', 3.99, 230),
 (29, 5, 'Trotwood 12oz', 2.99, 120),
 (30, 5, 'Coorslight 32oz', 3.99, 220),
-(31, 6, 'Not Your Father''s Rootbeer 12oz', 2.99, 170),
-(32, 6, 'Modelo 32oz', 5.99, 210),
-(33, 6, 'Yuengling Lager 32oz', 4.99, 230),
+(31, 5, 'Not Your Father''s Rootbeer 12oz', 2.99, 170),
+(32, 5, 'Modelo 32oz', 5.99, 210),
+(33, 5, 'Yuengling Lager 32oz', 4.99, 230),
 (34, 6, 'Cookies 2pk (Soft Kind)', 1.99, 400),
 (35, 6, 'Brownie', 1.99, 440),
 (36, 6, 'Cheesecake Slice', 3.99, 350),
@@ -112,7 +112,7 @@ INSERT INTO MenuItem VALUES
 (40, 6, 'Single Donuts', 0.99, 550);
 
 -- Inserting customers into the database
-INSERT INTO Customer (id, customernumber, lastname, firstname, email, phone) VALUES
+INSERT INTO Customer (id, customernumber, firstname, lastname, email, phone) VALUES
 (1, 'MC001', 'Childers', 'Matthew', 'childersmatt4@gmail.com', '513-703-0376'),
 (2, 'KW002', 'Kanye', 'West', 'Yeezus@ye.com', '441-378-2345'),
 (3, 'EC003', 'Elijah', 'Childers', 'EBC@gmail.com', '604-833-0099'),
