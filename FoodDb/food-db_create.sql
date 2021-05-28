@@ -29,7 +29,7 @@ Create table MenuItem (
 ID 				integer 			primary key auto_increment,
 CategoryID		integer 			not null,
 Name 			varchar(255) 		not null,
-Price		 	decimal				not null,
+Price		 	decimal(10.2)		not null,
 Calories	 	integer				not null,
 Foreign Key (CategoryID) references Category(ID),
 CONSTRAINT uMenuItem unique (CategoryId, Name)
@@ -42,7 +42,7 @@ ID 				integer 			primary key auto_increment,
 CustomerID		integer 			not null,
 OrderDate 		timestamp 			not null default current_timestamp,
 Status		 	varchar(1)			not null default 'O',
-Total	 		decimal				not null default 0,
+Total	 		decimal(10,2)		not null default 0,
 Foreign Key (CustomerID) references Customer(ID),
 CONSTRAINT uMenuItem unique (CustomerID, OrderDate)
 );
