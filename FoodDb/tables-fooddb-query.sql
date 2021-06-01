@@ -18,3 +18,15 @@ JOIN menuitem mi ON menuitemid = mi.id
 WHERE orderid = 2
 GROUP BY orderid;
 
+-- set a variable with the total
+SET @order_total = (SELECT SUM(price * qty) AS total
+FROM lineitem
+JOIN menuitem mi ON menuitemID = mi.id
+WHERE orderID = 2
+GROUP BY orderID);
+
+UPDATE orderticket SET total = @order_total
+WHERE id = 2;
+
+SELECT * FROM orderticket;
+
